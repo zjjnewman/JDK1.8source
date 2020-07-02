@@ -1,4 +1,4 @@
-package jdbc.statement.crud;
+package jdbc.bean;
 
 public class User {
 
