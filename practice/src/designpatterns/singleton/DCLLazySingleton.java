@@ -1,9 +1,13 @@
 package designpatterns.singleton;
 
 public class DCLLazySingleton {
+
     private volatile static DCLLazySingleton dclLazySingleton;
+
     private DCLLazySingleton(){}
+
     public DCLLazySingleton getDclLazySingleton(){
+
         if(dclLazySingleton == null){
             synchronized(DCLLazySingleton.class){
                 if(dclLazySingleton == null){

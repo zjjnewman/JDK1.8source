@@ -1,20 +1,22 @@
 package jdbc.bean;
 
-import java.sql.Date;
+import java.util.Date;
 
 /*
  * ORM编程思想  （object relational mapping）
  * 一个数据表对应一个java类
  * 表中的一条记录对应java类的一个对象
  * 表中的一个字段对应java类的一个属性
- * 
+ *
  */
 public class Customer {
-	
+
 	private int id;
 	private String name;
 	private String email;
+
 	private Date birth;
+
 	public Customer() {
 		super();
 	}

@@ -54,7 +54,6 @@ public class PreparedStatementUpdateTest {
         } finally {
             JDBCUtils.closeResource(connection, preparedStatement);
         }
-
     }
 
 

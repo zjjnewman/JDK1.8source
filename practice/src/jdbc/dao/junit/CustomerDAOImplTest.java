@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -20,7 +21,7 @@ class CustomerDAOImplTest {
     @Test
     void insert() {
         Connection connection = null;
-        Customer customer = new Customer(1, "于小飞", "yuxiaofei@gmail.com", new Date(2344525343242L));
+        Customer customer = new Customer(1, "于小飞", "yuxiaofei@gmail.com", new Timestamp(System.currentTimeMillis()));
         try {
             connection = JDBCUtils.getConnection();
             dao.insert(connection, customer);
@@ -46,23 +47,23 @@ class CustomerDAOImplTest {
         }
     }
 
-    @Test
-    void update() {
-        Connection connection = null;
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-        try {
-            java.util.Date date = simpleDateFormat.parse("1876-09-08");
-            Customer customer = new Customer(18, "贝多芬", "beiduofen@126.com", new Date(date.getTime()));
-            connection = JDBCUtils.getConnection();
-            dao.update(connection, customer);
-            System.out.println("更新成功");
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            JDBCUtils.closeResource(connection, null, null);
-        }
-    }
+//    @Test
+//    void update() {
+//        Connection connection = null;
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//
+//        try {
+//            java.util.Date date = simpleDateFormat.parse("1876-09-08");
+//            Customer customer = new Customer(18, "贝多芬", "beiduofen@126.com", new Date(date.getTime()));
+//            connection = JDBCUtils.getConnection();
+//            dao.update(connection, customer);
+//            System.out.println("更新成功");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        } finally {
+//            JDBCUtils.closeResource(connection, null, null);
+//        }
+//    }
 
     @Test
     void getCustomerById() {
